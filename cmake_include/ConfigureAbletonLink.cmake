@@ -15,11 +15,11 @@ function(ConfigureAbletonLink PATH_TO_LINK)
         cxx_generalized_initializers
     )
 
-    if(UNIX AND NOT APPLE)
-        set_property(target ableton::link append property
-            interface_compile_definitions
-            link_platform_unix=1
-        )
+    if(UNIX)
+    set_property(TARGET Ableton::Link APPEND PROPERTY
+      INTERFACE_COMPILE_DEFINITIONS
+      LINK_PLATFORM_UNIX=1
+    )
     endif()
 
     if(APPLE)
